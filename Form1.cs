@@ -64,8 +64,16 @@ namespace Calculator
             }
             else if (currentOperator == Operators.Divide)
             {
-                firstOperand /= secondOperand;
-                display.Text = firstOperand.ToString();
+                if (secondOperand == 0) // 만약 secondOperand 변수에 0이 저장되어 있다면
+                {
+                    display.Text = "0으로 나눌 수 없습니다."; // "0으로 나눌 수 없습니다." 를 출력
+                }
+
+                else
+                {
+                    firstOperand /= secondOperand;
+                    display.Text = firstOperand.ToString();
+                }
             }
         }
 
